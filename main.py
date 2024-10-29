@@ -1,6 +1,6 @@
 from books_sdk import get_book_by_id, get_author
 
-print(get_author(get_book_by_id(1, 'AAECTkuGjWo1Imwr-_6UrN-nzbo89sd3WSM')))
+print(get_author(get_book_by_id('AAECTkuGjWo1Imwr-_6UrN-nzbo89sd3WSM', 1)))
 
 # Гипотеза 1: Неправильные скобки
 # Способ проверки: методом клика пройтись по какой скобке
@@ -27,8 +27,8 @@ print(get_author(get_book_by_id(1, 'AAECTkuGjWo1Imwr-_6UrN-nzbo89sd3WSM')))
 # Установленный факт: books_sdk.TokenError: bad token!
 # Вывод: Гипотеза опроверглась, все три выборочно провернных ID , отдают туже ошибку
 
-# Гипотеза 5: ...
-# Способ проверки: ...
-# Код для проверки: ...
-# Установленный факт: ...
-# Вывод: ...
+# Гипотеза 5: Проблема в порядке передаваемых аргументов в функции get_book_by_id?
+# Способ проверки: Поменять местами ID и Token
+# Код для проверки: print((get_book_by_id('AAECTkuGjWo1Imwr-_6UrN-nzbo89sd3WSM', 1)))
+# Установленный факт: {'title': 'Мёртвые души', 'author': 'Николай Гоголь'}
+# Вывод: Гипотеза подтвердилась, проблема в позиции передаваемых аргументов, код исправлен
